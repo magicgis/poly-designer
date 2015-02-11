@@ -1,0 +1,161 @@
+<link rel="import" href="../components/polymer/polymer.html">
+
+<!-- TODO: adapt techniks used in core-list to speed up loading-->
+
+
+<polymer-element name="tvl-basic-table" attributes="head data selected obj">
+	<template>
+		<style> 
+			#design_host {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+			}
+			table td, sh th{
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-top: 5px;
+			}
+			#wrapper{
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				max-width: 100%;
+				max-height: 100%;
+				box-sizing: border-box;
+			}
+			#fh{
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;/*This attr gets changed on scroll left*/
+				background-color: white;
+			}
+			#fh th{
+				cursor: pointer;
+			}
+			tbody tr:hover{
+				background-color: rgba(0,0,0,0.1);
+			}
+			:host{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			};
+		</style>
+		<div id="wrapper">
+			<div id="fh">
+				<table>
+					<thead>
+						<tr>
+							<template repeat="{{ h, i in head}}">
+								<th on-click="{{ headerClick }}" data-index="{{ i }}">{{ h.label || h.name }}</th>
+							</template>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<table>
+				<thead>
+					<tr id="sh">
+						<template repeat="{{h in head}}">
+							<th>{{ h.label || h.name }}</th>
+						</template>
+					</tr>
+				</thead>
+				<tbody id="data"></tbody>
+			</table>
+		</div>
+	</template>
+	<script>
+		Polymer('tvl-basic-table', {
+			selected: null,
+			selRowIndex: 0,
+			head: [],//the header as names of the rows in futer this will contain more information
+			data: [],
+			ready: function(){
+				//TODO: fire also on every window resize
+				var $t = this;
+				//this.$.wrapper.addEventListener("scroll",function(){$t.render.apply($t)});//add event listener for scroll event
+				window.addEventListener("resize",this.render.bind(this));
+				
+				//move the fixed header bar
+				this.$.wrapper.addEventListener("scroll",function(){
+					var v = this.scrollLeft;
+					$t.$.fh.style.left="-"+v+"px";
+				});
+			},
+			render: function(e){
+				//var onclick = this.headerClick.bind(this);
+				var table = this.$.fh;
+				var thead = table.querySelector("thead");
+				var chead = thead.querySelector("tr");
+				
+				chead.width = this.$.sh.offsetWidth;//set the width of the header as wide as the real is
+				chead.height = this.$.sh.offsetHeight;
+				table.width = this.$.sh.offsetWidth;
+				table.style.height = this.$.sh.offsetHeight+"px";
+				table.style.width = this.$.sh.offsetWidth+"px";
+				thead.width = this.$.sh.offsetWidth;
+				thead.style.height = this.$.sh.offsetHeight+"px";
+				thead.style.width = this.$.sh.offsetWidth+"px";
+				
+				console.log(e,this.$.sh.cells);
+				for(var i = 0, l = this.$.sh.cells.length; i < l; i++){
+					chead.cells[i].width=this.$.sh.cells[i].offsetWidth;
+					chead.cells[i].dataset.index = i;
+					//chead.cells[i].addEventListener("click",onclick);
+				}
+			},
+			dataChanged: function(){
+				var $t = this;
+				var onclick = function(event){
+					var index = this.dataset.index;
+					var obj = $t.obj[index] || undefined;
+					$t.fire("edit",{index: index, data: $t.data[index],obj:obj});
+				}
+				var d = document.createDocumentFragment();
+				for(var i = 0; i < this.data.length; i++){
+					var tr = document.createElement("tr");
+					tr.dataset.index = i;
+					tr.addEventListener("click",onclick);//add event listener for edits
+					for(var j = 0; j < this.data[i].length; j++){
+						var td = document.createElement("td");
+						td.innerHTML = this.data[i][j];
+						tr.appendChild(td);
+					}
+					d.appendChild(tr);
+				}
+				this.$.data.innerHTML = "";
+				this.$.data.appendChild(d);
+				$t = this;
+				this.render();
+			},
+			headChanged: function(){
+				this.dataChanged();
+			},
+			clear: function(){
+				this.data = [];
+			},
+			objChanged: function(){//convert object to array
+				if(!this.head)return;
+				for(var i = 0; i < this.head.length; i++)this.head[i].name = this.head[i].Field;//make shure every name is defined
+				var data = [];
+				for(var i=0; i < this.obj.length; i++){
+					var s = [];
+					for(var j = 0; j < this.head.length; j++){
+						s.push(this.obj[i][this.head[j].name]);
+					}
+					data.push(s);
+				}
+				this.data = data;
+			},
+			headerClick: function(e){
+				var index = e.target.dataset.index;
+				console.log(index);
+				this.fire("hclick",{index:index, data:this.head[index]});
+			}
+		});
+	</script>
+</polymer-element>

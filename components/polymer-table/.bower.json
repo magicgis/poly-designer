@@ -1,0 +1,13 @@
+{
+  "name": "polymer-table",
+  "homepage": "https://github.com/rensovargas/polymer-table",
+  "_release": "2f85a8420a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2f85a8420a6e5108b68eb0940b57ef963690571d"
+  },
+  "_source": "git://github.com/rensovargas/polymer-table.git",
+  "_target": "*",
+  "_originalSource": "rensovargas/polymer-table"
+}
