@@ -47,170 +47,170 @@
 	<content select='[role="datasource"]'></content>
 	<content select="core-scroll-threshold"></content>
 	<style>
-	.sortable-table {
-		width: 100%;
-		max-width: 100%;
-		border-collapse: collapse;
-	}
-	.checkbox-column {
-		width: 1em;
-		vertical-align: middle;
-	}
-	.checkbox-column input[type=checkbox] {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.open-below {
-		top: 22px;
-		border: 1px solid #ddd;
-	}
-	th.checkbox-column input[type=checkbox] {
-		vertical-align: middle;
-	}
-	tbody.grid {
-		font-size: 0;
-	}
-	tbody.grid > tr {
-		box-sizing: border-box;
-		display: inline-block;
-		font-size: initial;
-	}
-	table.articlePager {
-		width: 100%;
-	}
-	table.articlePager td:first-of-type {
-		cursor: pointer;
-	}
-	table.articlePager td:nth-of-type(2) {
-		width: 100%;
-	}
-	table.articlePager td:nth-of-type(3) {
-		cursor: pointer;
-	}
-	.sortable-table thead .dropdown-menu {
-		position: absolute;
-		z-index: 1000;
-		display: none;
-		list-style: outside none none;
-		background-color: #FFF;
-	}
-	.sortable-table thead .open > .dropdown-menu {
-		display: block;
-	}
-	:host(.default) .sortable-table {
-		border-collapse: collapse;
-		border: 1px solid #ccc;
-	}
-	:host(.default) .sortable-table .row-selection {
-		cursor: pointer;
-	}
-	:host(.default) .sortable-table tbody td {
-		border: 1px dotted #ccc;
-	}
-	:host(.default) .sortable-table tbody tr:nth-of-type(even) {
-		background-color: rgba(255,255,224,0.25);
-	}
-	:host(.default) .sortable-table tfoot td {
-		border: 1px solid #ccc;
-		background-color: #F5F8FA;
-	}
-	:host(.default) .sortable-table thead th {
-		border: 1px solid #ccc;
-		background-color: #0084B4;
-		color: white;
-		cursor: pointer;
-	}
-	:host(.default) .sortable-table thead th.sorted-column-asc {
-		text-decoration: overline;
-	}
-	:host(.default) .sortable-table thead th.sorted-column-desc {
-		text-decoration: underline;
-	}
-	:host(.default) .sortable-table thead th.column-move-right {
-		border-right-color: #FBBA37;
-		background: #FBBA37; /* Older browsers */
-		background: -moz-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* FF3.6+ */
-		background: -webkit-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* IE10+ */
-		background: linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* W3C */
-	}
-	:host(.default) .sortable-table thead th.column-move-left {
-		border-left-color: #FBBA37;
-		background: #FBBA37; /* Older browsers */
-		background: -moz-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* FF3.6+ */
-		background: -webkit-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* IE10+ */
-		background: linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* W3C */
-	}
-	:host(.default) .sortable-table thead th.column-in-move,
-	:host(.default) .sortable-table tbody tr.row-in-move {
-		opacity: 0.4;
-	}
-	:host(.default) .sortable-table tbody tr.row-move-above {
-		background-color: purple;
-	}
-	:host(.default) .sortable-table tbody tr.row-move-below {
-		background-color: red;
-	}
-	:host(.default) .sortable-table tbody tr.selected-row {
-		background-color: rgba(0,96,200,0.2);
-	}
-	:host(.default) .sortable-table thead .dropdown-menu {
-		border: 1px solid #ccc;
-		background-color: #0084B4;
-		text-align: left;
-		min-width: 160px;
-		padding: 4px;
-		margin-top: 1px;
-	}
-	:host(.default) .sortable-table thead .dropdown-menu .btn {
-		text-align: center;
-	}
-	@-webkit-keyframes progress-bar-stripes{
-		from{
-			background-position:40px 0
+		.sortable-table {
+			width: 100%;
+			max-width: 100%;
+			border-collapse: collapse;
 		}
-		to{
-			background-position:0 0
+		.checkbox-column {
+			width: 1em;
+			vertical-align: middle;
 		}
-	}
-	@-o-keyframes progress-bar-stripes{
-		from{
-			background-position:40px 0
+		.checkbox-column input[type=checkbox] {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
 		}
-		to{
-			background-position:0 0
+		.open-below {
+			top: 22px;
+			border: 1px solid #ddd;
 		}
-	}
-	@keyframes progress-bar-stripes{
-		from{
-			background-position:40px 0
+		th.checkbox-column input[type=checkbox] {
+			vertical-align: middle;
 		}
+		tbody.grid {
+			font-size: 0;
+		}
+		tbody.grid > tr {
+			box-sizing: border-box;
+			display: inline-block;
+			font-size: initial;
+		}
+		table.articlePager {
+			width: 100%;
+		}
+		table.articlePager td:first-of-type {
+			cursor: pointer;
+		}
+		table.articlePager td:nth-of-type(2) {
+			width: 100%;
+		}
+		table.articlePager td:nth-of-type(3) {
+			cursor: pointer;
+		}
+		.sortable-table thead .dropdown-menu {
+			position: absolute;
+			z-index: 1000;
+			display: none;
+			list-style: outside none none;
+			background-color: #FFF;
+		}
+		.sortable-table thead .open > .dropdown-menu {
+			display: block;
+		}
+		:host(.default) .sortable-table {
+			border-collapse: collapse;
+			border: 1px solid #ccc;
+		}
+		:host(.default) .sortable-table .row-selection {
+			cursor: pointer;
+		}
+		:host(.default) .sortable-table tbody td {
+			border: 1px dotted #ccc;
+		}
+		:host(.default) .sortable-table tbody tr:nth-of-type(even) {
+			background-color: rgba(255,255,224,0.25);
+		}
+		:host(.default) .sortable-table tfoot td {
+			border: 1px solid #ccc;
+			background-color: #F5F8FA;
+		}
+		:host(.default) .sortable-table thead th {
+			border: 1px solid #ccc;
+			background-color: #0084B4;
+			color: white;
+			cursor: pointer;
+		}
+		:host(.default) .sortable-table thead th.sorted-column-asc {
+			text-decoration: overline;
+		}
+		:host(.default) .sortable-table thead th.sorted-column-desc {
+			text-decoration: underline;
+		}
+		:host(.default) .sortable-table thead th.column-move-right {
+			border-right-color: #FBBA37;
+			background: #FBBA37; /* Older browsers */
+			background: -moz-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* FF3.6+ */
+			background: -webkit-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* IE10+ */
+			background: linear-gradient(left, #0084B4 50%, #FBBA37 100%); /* W3C */
+		}
+		:host(.default) .sortable-table thead th.column-move-left {
+			border-left-color: #FBBA37;
+			background: #FBBA37; /* Older browsers */
+			background: -moz-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* FF3.6+ */
+			background: -webkit-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* IE10+ */
+			background: linear-gradient(left, #FBBA37 0%, #0084B4 50%); /* W3C */
+		}
+		:host(.default) .sortable-table thead th.column-in-move,
+		:host(.default) .sortable-table tbody tr.row-in-move {
+			opacity: 0.4;
+		}
+		:host(.default) .sortable-table tbody tr.row-move-above {
+			background-color: purple;
+		}
+		:host(.default) .sortable-table tbody tr.row-move-below {
+			background-color: red;
+		}
+		:host(.default) .sortable-table tbody tr.selected-row {
+			background-color: rgba(0,96,200,0.2);
+		}
+		:host(.default) .sortable-table thead .dropdown-menu {
+			border: 1px solid #ccc;
+			background-color: #0084B4;
+			text-align: left;
+			min-width: 160px;
+			padding: 4px;
+			margin-top: 1px;
+		}
+		:host(.default) .sortable-table thead .dropdown-menu .btn {
+			text-align: center;
+		}
+		@-webkit-keyframes progress-bar-stripes{
+			from{
+				background-position:40px 0
+			}
+			to{
+				background-position:0 0
+			}
+		}
+		@-o-keyframes progress-bar-stripes{
+			from{
+				background-position:40px 0
+			}
+			to{
+				background-position:0 0
+			}
+		}
+		@keyframes progress-bar-stripes{
+			from{
+				background-position:40px 0
+			}
 
-		to{
-			background-position:0 0
+			to{
+				background-position:0 0
+			}
 		}
-	}
-	.indexedPager > ul > li:first-of-type a:after,
-	.defaultPager > div:nth-of-type(1) > button:nth-of-type(1):after {
-		content: '«';
-	}
-	.simplePager > button:nth-of-type(1):after,
-	.defaultPager > div:nth-of-type(1) > button:nth-of-type(2):after {
-		content: '‹';
-	}
-	.simplePager > button:nth-of-type(2):after,
-	.defaultPager > div:nth-of-type(2) > button:nth-of-type(1):after {
-		content: '›';
-	}
-	.indexedPager > ul > li:last-of-type a:after,
-	.defaultPager > div:nth-of-type(2) > button:nth-of-type(2):after {
-		content: '»';
-	}
-</style>
+		.indexedPager > ul > li:first-of-type a:after,
+		.defaultPager > div:nth-of-type(1) > button:nth-of-type(1):after {
+			content: '«';
+		}
+		.simplePager > button:nth-of-type(1):after,
+		.defaultPager > div:nth-of-type(1) > button:nth-of-type(2):after {
+			content: '‹';
+		}
+		.simplePager > button:nth-of-type(2):after,
+		.defaultPager > div:nth-of-type(2) > button:nth-of-type(1):after {
+			content: '›';
+		}
+		.indexedPager > ul > li:last-of-type a:after,
+		.defaultPager > div:nth-of-type(2) > button:nth-of-type(2):after {
+			content: '»';
+		}
+	</style>
 
 	<template id="html">
 		<html-echo html="{{value}}"></html-echo>
