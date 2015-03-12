@@ -1,0 +1,65 @@
+<link rel="import" href="../core-menu/core-submenu.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../paper-item/paper-item.html">
+
+<polymer-element name="arcane-catalog" attributes="url catagories">
+
+  <template>
+    <style>    
+      :host {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      #core_menu {
+        font-size: 16px;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      #core_ajax {
+        left: -12px;
+        top: -12px;
+        position: absolute;
+      }
+    </style>
+    	<template repeat="{{ catagory in catagories }}">
+        <core-menu selected="0" selectedindex="0" id="core_menu" lable="{{ catagory.name }}">
+          <template repeat="{{ article in catagory.articles }}">
+            <core-submenu opened active id="core-submenu1" icon="arrow-forward" label="Topics" vertical layout>
+              <paper-item id="paper_item" icon="settings" label="Item">{{ article }}</paper-item>
+            </core-submenu>
+          </template>
+        </core-menu>
+			</template>
+  </template>
+
+  <script>
+
+    Polymer({
+      create: function(){
+      	this.catagories = [
+          {
+            "name": "catagory1",
+            "articles": [
+                    "article1",
+                    "article2"
+                  ]
+          },
+          {
+            "name": "catagory2",
+            "articles": [
+                    "article3"
+                  ]
+          }
+        ]
+      },
+      url: ''
+    });
+
+  </script>
+
+</polymer-element>

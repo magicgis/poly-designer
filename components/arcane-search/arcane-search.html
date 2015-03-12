@@ -1,0 +1,51 @@
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+
+<polymer-element name="arcane-search" attributes="search_value search_result search_url search_params">
+
+  <template>
+    <style>    
+      :host {
+        position: absolute;
+        width: 90%;
+        height: 12%;
+        margin: 0 5%;
+        box-sizing: border-box;
+      }
+      #core_field {
+        left: 1080px;
+        top: 450px;
+      }
+      #core_ajax {
+        left: 460px;
+        top: 170px;
+        position: absolute;
+      }
+      #paper_icon_button {
+        left: 130px;
+        top: 10px;
+        position: absolute;
+      }
+      paper-input {
+        width: 100%;
+      }
+    </style>
+    <paper-input label="Search ..." floatinglabel value="{{ search_value }}" id="paper_input"></paper-input>
+    <core-ajax url="{{ search_url }}" handleas="json" params="{{ search_params }}" method="{{ search_method }}" id="core_ajax" hidden></core-ajax>
+  </template>
+
+  <script>
+
+    Polymer({
+      search_value: '',
+      search_result: {},
+      search_method: 'GET',
+      search_url: '',
+      search_params: ''
+    });
+
+  </script>
+
+</polymer-element>
