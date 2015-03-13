@@ -1,0 +1,59 @@
+<link rel="import" href="../polymer/polymer.html">
+<script src="osom-tables.js">
+
+<polymer-element name="osom-table-container" attributes="source">
+  <template>
+      <p>Table</p>
+      <shadow>
+      </shadow>
+  </template>
+</polymer-element>
+<polymer-element name="osom-table"  attributes="source,columns">
+  <template>
+      <table>
+          <shadow>
+          </shadow>
+      </table>
+  </template>
+</polymer-element>
+<polymer-element name="osom-table-body">
+  <template>
+      <tbody>
+          <tr>
+              <td>Test</td>
+              <td>Test</td>
+          </tr>
+      </tbody>
+      <shadow>
+      </shadow>
+  </template>
+</polymer-element>
+<polymer-element name="osom-header">
+  <template>
+          <tr>
+              <shadow>
+              </shadow>
+      </tr>
+  </template>
+</polymer-element>
+<polymer-element name="osom-header-sort" attributes="name">
+  <template>
+          <th>{{ name }}</th>
+      <shadow>
+      </shadow>
+  </template>
+</polymer-element>
+<polymer-element name="osom-filters">
+  <template>
+      <div>Filters</div>
+      <shadow>
+       </shadow>
+  </template>
+</polymer-element>
+<polymer-element name="osom-text-filter"  attributes="name label">
+  <template>
+      <p><label for="{{ name }}">{{ label }}:</label> <input type="text" name="{{ name }}"></input></p>
+      <shadow>
+      </shadow>
+  </template>
+</polymer-element>
