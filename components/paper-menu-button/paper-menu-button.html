@@ -35,7 +35,7 @@ Example:
 </template>
 </polymer-element>
 
-<polymer-element name="paper-menu-button" extends="paper-focusable" attributes="src icon opened halign valign slow" on-tap="{{tapAction}}">
+<polymer-element name="paper-menu-button" extends="paper-focusable" attributes="lable src icon opened halign valign slow" on-tap="{{tapAction}}">
   <template>
     <link rel="stylesheet" href="paper-menu-button.css">
     <paper-menu-button-overlay target="{{$.overlay}}" relatedTarget="{{}}" halign="{{halign}}" valign="{{valign}}" opened="{{opened}}" transition="paper-menu-button-transition-top-{{halign}}{{slow ? '-slow' : ''}}"></paper-menu-button-overlay>
@@ -48,11 +48,21 @@ Example:
       </core-menu>
     </paper-menu-button-overlay-container>
     <core-icon src="{{src}}" icon="{{icon}}"></core-icon>
+    <span>{{ lable }}</span>
   </template>
   <script>
     Polymer('paper-menu-button', {
 
       publish: {
+
+        /**
+         * The menu-button's label.
+         * @attribute lable
+         * @type string
+         * default ''
+         */
+
+        lable: "",
 
         /**
          * If true, this menu is currently visible.

@@ -31,11 +31,11 @@
   "devDependencies": {
     "web-component-tester": "*"
   },
-  "_release": "cbe9fa6bab",
+  "_release": "16ac9a4abb",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cbe9fa6bab57930b59cbbdd9017ea8a92f02a875"
+    "commit": "16ac9a4abb0e433ae13622a9426c6a18ccc37451"
   },
   "_source": "git://github.com/GoogleWebComponents/google-map.git",
   "_target": "master",

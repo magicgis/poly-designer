@@ -26,11 +26,11 @@
   "dependencies": {
     "core-shared-lib": "Polymer/core-shared-lib#^0.5.5"
   },
-  "_release": "d16599b737",
+  "_release": "521306e7a6",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d16599b7378bed2ca75ba30aa10d9a6124545a6d"
+    "commit": "521306e7a65d26ba977d6e4894316d03424c35a8"
   },
   "_source": "git://github.com/GoogleWebComponents/google-apis.git",
   "_target": "master",
