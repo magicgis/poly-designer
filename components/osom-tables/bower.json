@@ -1,0 +1,20 @@
+{
+  "name": "osom-tables",
+  "version": "0.0.1",
+  "authors": [
+    "John D'Agostino <johnd@jobready.com.au>"
+  ],
+  "description": "Element providing flash messages",
+  "keywords": "osom, flash, polymer, web-components",
+  "main": "osom-table.html",
+  "license": "MIT",
+  "homepage": "https://github.com/jobready/osom-tables-polymer/",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.2.4",
+    "chai": "~1.9.1",
+    "mocha": "~1.19.0"
+  }
+}

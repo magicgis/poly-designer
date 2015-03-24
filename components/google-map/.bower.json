@@ -26,16 +26,16 @@
     "maps"
   ],
   "dependencies": {
-    "google-apis": "GoogleWebComponents/google-apis#~0.4.2"
+    "google-apis": "GoogleWebComponents/google-apis#^0.4.4"
   },
   "devDependencies": {
-    "web-component-tester": "Polymer/web-component-tester#^1.1.2"
+    "web-component-tester": "*"
   },
-  "_release": "c21c852faf",
+  "_release": "16ac9a4abb",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c21c852faf8d9dacc6a8ad5dc7e3b3040748e177"
+    "commit": "16ac9a4abb0e433ae13622a9426c6a18ccc37451"
   },
   "_source": "git://github.com/GoogleWebComponents/google-map.git",
   "_target": "master",

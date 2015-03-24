@@ -2,10 +2,10 @@
   "name": "inspector-elements",
   "private": true,
   "dependencies": {
-    "core-animation": "Polymer/core-animation#^0.5.0",
-    "core-icons": "Polymer/core-icons#^0.5.0",
-    "core-pages": "Polymer/core-pages#^0.5.0",
-    "x-meta": "Polymer/x-meta#^0.5.0"
+    "core-animation": "Polymer/core-animation#^0.5",
+    "core-icons": "Polymer/core-icons#^0.5",
+    "core-pages": "Polymer/core-pages#^0.5",
+    "x-meta": "Polymer/x-meta#^0.5"
   },
-  "version": "0.5.2"
+  "version": "0.5.5"
 }

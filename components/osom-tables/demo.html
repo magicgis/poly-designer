@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>Osom Flash Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="osom-tables.html">
+
+</head>
+<body unresolved>
+
+  <p>An example of using <code>&lt;osom-table></code>:</p>
+	<osom-table-container source="/contracts.json">
+		<osom-filters>
+			<osom-text-filter label="Id" name="id"/>
+			<osom-text-filter label="Name" name="name"/>
+		</osom-filters>
+		<osom-table>
+			<osom-header>
+				<osom-header-sort name="id"/>
+				<osom-header-sort name="name"/>
+			</osom-header>
+			<osom-table-body />
+		</osom-table>
+	</osom-table-container>
+</body>
+</html>

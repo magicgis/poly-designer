@@ -2,9 +2,9 @@
   "name": "paper-calculator",
   "private": true,
   "dependencies": {
-    "core-media-query": "Polymer/core-media-query#^0.5.0",
-    "font-roboto": "Polymer/font-roboto#^0.5.0",
-    "paper-ripple": "Polymer/paper-ripple#^0.5.0"
+    "core-media-query": "Polymer/core-media-query#^0.5",
+    "font-roboto": "Polymer/font-roboto#^0.5",
+    "paper-ripple": "Polymer/paper-ripple#^0.5"
   },
-  "version": "0.5.2"
+  "version": "0.5.5"
 }

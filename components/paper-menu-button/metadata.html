@@ -7,15 +7,16 @@
     Code distributed by Google as part of the polymer project is also
     subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<x-meta id="paper-menu-button" label="Menu Button" isContainer>
+<x-meta id="paper-menu-button" label="Menu Button" group="Paper" isContainer>
   <template>
     <paper-menu-button icon="menu">
-      <div>Menu Item 1</div>
-      <div>Menu Item 2</div>
-      <div>Menu Item 3</div>
+      <paper-item>Menu Item 1</paper-item>
+      <paper-item>Menu Item 2</paper-item>
+      <paper-item>Menu Item 3</paper-item>
     </paper-menu-button>
   </template>
   <template id="imports">
     <link rel="import" href="paper-menu-button.html">
+    <link rel="import" href="../paper-item/paper-item.html">
   </template>
 </x-meta>
