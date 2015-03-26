@@ -1,6 +1,20 @@
 <x-meta id="arcane-catagory" label="Catagory" group="Arcane">
 	<template>
-		<arcane-catagory></arcane-catagory>
+		<arcane-catagory catagories='[
+          {
+            "name": "catagory1",
+            "articles": [
+                    "article1",
+                    "article2"
+                  ]
+          },
+          {
+            "name": "catagory2",
+            "articles": [
+                    "article3"
+                  ]
+          }
+        ]'></arcane-catagory>
 	</template>
 	<property name="catagories" kind="json"></property>
 	<template id="imports">

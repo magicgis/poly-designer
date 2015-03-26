@@ -1,8 +1,10 @@
+<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-menu/core-submenu.html">
 <link rel="import" href="../core-icons/core-icons.html">
 <link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
 
-<polymer-element name="arcane-catalog" attributes="url catagories">
+<polymer-element name="arcane-catagory" attributes="url catagories" style="display:block">
 
   <template>
     <style>    
@@ -25,39 +27,30 @@
         top: -12px;
         position: absolute;
       }
+      paper-item {
+        width: 200px;
+      }
     </style>
-    	<template repeat="{{ catagory in catagories }}">
-        <core-menu selected="0" selectedindex="0" id="core_menu" lable="{{ catagory.name }}">
-          <template repeat="{{ article in catagory.articles }}">
-            <core-submenu opened active id="core-submenu1" icon="arrow-forward" label="Topics" vertical layout>
-              <paper-item id="paper_item" icon="settings" label="Item">{{ article }}</paper-item>
-            </core-submenu>
-          </template>
-        </core-menu>
-			</template>
+      <!-- <core-ajax handleas="json" method="POST" id="core_ajax" hidden auto url="{{ url }}" params="catagories" respond="{{ catagories }}"> -->
+      <core-menu selected="0" selectedindex="0" id="core_menu" lable="{{ catagory.name }}">
+    	  <template repeat="{{ catagory in catagories }}">
+          <core-submenu id="core-submenu1" icon="arrow-forward" label="{{ catagory.name }}" vertical layout>
+            <template repeat="{{ article in catagory.articles }}">
+              <paper-item>{{ article }}</paper-item>
+            </template>
+          </core-submenu>
+			  </template>
+      </core-menu>
   </template>
 
   <script>
 
-    Polymer({
-      create: function(){
-      	this.catagories = [
-          {
-            "name": "catagory1",
-            "articles": [
-                    "article1",
-                    "article2"
-                  ]
-          },
-          {
-            "name": "catagory2",
-            "articles": [
-                    "article3"
-                  ]
-          }
-        ]
+    Polymer("arcane-catagory", {
+      created: function(){
+        this.catagories = [];
       },
-      url: ''
+
+      url: ""
     });
 
   </script>

@@ -2,7 +2,21 @@
 	<template>
 		<arcane-container>
 			<arcane-search></arcane-search>
-			<arcane-catagory></arcane-catagory>
+			<arcane-catagory catagories='[
+	          {
+	            "name": "catagory1",
+	            "articles": [
+	                    "article1",
+	                    "article2"
+	                  ]
+	          },
+	          {
+	            "name": "catagory2",
+	            "articles": [
+	                    "article3"
+	                  ]
+	          }
+	        ]'></arcane-catagory>
 		</arcane-container>
 	</template>
 	<template id="imports">
