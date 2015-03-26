@@ -1,0 +1,9 @@
+<x-meta id="core-media-query" label="media query" group="Core">
+	<template>
+		<core-media-query query="min-width: 600px" queryMatches="{{qMatches}}"></core-media-query>
+      My query of "{{query}}" {{qMatches ? "matches" : "doesn't match"}}
+	</template>
+	<template id="imports">
+		<link rel="import" href="core-media-query.html">
+	</template>
+</x-meta>
