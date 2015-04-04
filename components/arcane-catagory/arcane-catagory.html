@@ -34,7 +34,7 @@
       <!-- <core-ajax handleas="json" method="POST" id="core_ajax" hidden auto url="{{ url }}" params="catagories" respond="{{ catagories }}"> -->
       <core-menu selected="0" selectedindex="0" id="core_menu" lable="{{ catagory.name }}">
     	  <template repeat="{{ catagory in catagories }}">
-          <core-submenu id="core-submenu1" icon="arrow-forward" label="{{ catagory.name }}" vertical layout>
+          <core-submenu id="core-submenu1" icon="list" label="{{ catagory.name }}" vertical layout>
             <template repeat="{{ article in catagory.articles }}">
               <paper-item>{{ article }}</paper-item>
             </template>
